@@ -71,7 +71,7 @@ function arvosteleElokuva(){
 
   fetch('/api/arvostelu', options).then(function(response) {
       console.log(response)
-      if(response.status == 200){
+      if(response.status == 201){
         console.log("Push OK!")
       }
     }, function(error){
