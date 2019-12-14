@@ -57,9 +57,35 @@
     </div>
 
     <div class="col-sm-4">
-      kolmas
+      <h4>Arvostele Elokuva</h4>
+
+      <form>
+        <div class="form-group">
+          <label for="arvostelu">Arvostelu</label>
+          <input type="text" class="form-control" id="arvostelu">
+        </div>
+        <div class="form-group">
+          <label for="arvostelija">Arvostelija</label>
+          <input type="textarea" class="form-control" id="arvostelija">
+        </div>
+        <button onclick="arvosteleElokuva();" class="btn oma_button" type="button">Arvostelele</button>
+      </form>
     </div>
   </div>
+
+  <br>
+  <h4>Leffa-arvostelut</h4>
+  <table id="arvostelutaulukko" class="table">
+    <tbody>
+      <tr>
+        <th>Leffan Nimi</th>
+        <th>Arvostelu</th>
+        <th>Arvostelija</th>
+      </tr>
+    </tbody>
+  </table>
+
+
 
   </body>
 </html>
