@@ -32,11 +32,11 @@ const arvostelut = [
     }
 ]
 
-app.get('/api/arvostelut/vanha', function (request, response) {
+app.get('/api/arvostelut', function (request, response) {
   response.send(arvostelut);
 })
 
-app.post('/api/arvostelu/vanha', function (request, response) {
+app.post('/api/arvostelu', function (request, response) {
   console.log("Leffan arvostelu");
   console.log(request.body);
   arvostelut.push(request.body);
@@ -44,5 +44,5 @@ app.post('/api/arvostelu/vanha', function (request, response) {
   response.send(200);
 })
 
-app.get('/api/arvostelut', db.haeArvostelut)
-app.post('/api/arvostelu', db.luoArvostelu)
+app.get('/api/arvostelut/uusi', db.haeArvostelut)
+app.post('/api/arvostelu/uusi', db.luoArvostelu)
