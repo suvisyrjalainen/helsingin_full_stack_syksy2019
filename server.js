@@ -9,8 +9,10 @@ app.listen(port, () => console.log("kuuntelen porttia " + port));
 
 app.use(express.static("public"));
 
+//Dummy-toteutuksessa käytettävä parseri
 //app.use(express.json({limit: '1mb'}));
 
+//PostgreSQL-toteutuksessa käytettävä bodyParset
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
@@ -18,7 +20,7 @@ app.use(
   })
 )
 
-
+//Dummy-toteutuksessa käytetty "tietokanta"
 const arvostelut = [
     {
         "leffa": "Titanic",
@@ -32,6 +34,7 @@ const arvostelut = [
     }
 ]
 
+//Dummy-toteutuksessa käytetty rajapinta
 app.get('/api/arvostelut', function (request, response) {
   response.send(arvostelut);
 })
@@ -44,5 +47,6 @@ app.post('/api/arvostelu', function (request, response) {
   response.send(200);
 })
 
+//PostgreSQL-toteutuksessa käytetty rajapinta
 app.get('/api/arvostelut/uusi', db.haeArvostelut)
 app.post('/api/arvostelu/uusi', db.luoArvostelu)
